@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-900
+}
+
+@layer components {
+  .btn {
+    @apply bg-green-400 hover:translate-x-2 hover:translate-y-2 transition-all duration-200 p-2 px-4 font-black
+  }
+}
