@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url(/assets/fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'Pixel';
+  src: url(/assets/fonts/joystix-monospace.otf);
+}
+
 body {
   @apply bg-zinc-900
 }

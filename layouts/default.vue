@@ -1,7 +1,7 @@
 <template>
-  <main>
-    <header class="pb-2 mb-24 px-4">
-      <nav class="container mx-auto gap-12 flex justify-between flex-col">
+  <main class="overflow-x-hidden">
+    <header>
+      <nav class="container mx-auto pb-2 mb-24 px-4 gap-12 flex justify-between flex-col">
         <section class="flex gap-8">
           <a href="https://michaljaniec.netlify.app/" target="_blank">
             <button class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200">
@@ -39,9 +39,18 @@
         </section>
       </nav>
     </header>
-    <!-- slot-->
-    <section class="container mx-auto">
+
+    <section class="container mx-auto min-h-[500px] p-4">
       <slot />
     </section>
+
+    <footer class="bg-green-400 h-full">
+      <section class="h-full w-full container mx-auto p-4">
+        <img class="mb-24 pt-8" src="~assets/svg/footerLogo.svg" />
+        <div class="">
+          <span class="font-black">&COPY;2023 JANIEC<span class=" font-normal">PARADAISE</span></span>
+        </div>
+      </section>
+    </footer>
   </main>
 </template>
