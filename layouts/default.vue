@@ -3,7 +3,7 @@
     <header>
       <nav class="container mx-auto pb-2 mb-24 px-4 gap-12 flex justify-between flex-col">
         <section class="flex gap-8">
-          <a href="https://michaljaniec.netlify.app/" target="_blank">
+          <a href="" target="_blank">
             <button class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200">
               JANIECPARADAISE
             </button>
