@@ -10,6 +10,7 @@ export default defineNuxtConfig({
       link: [
         {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
       ]
-    }
+    },
+    pageTransition: { name: 'page', mode: 'out-in' }
   }
 });

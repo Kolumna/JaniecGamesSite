@@ -40,17 +40,32 @@
       </nav>
     </header>
 
-    <section class="container mx-auto min-h-[500px] p-4">
-      <slot />
+    <section class="container mx-auto min-h-[750px] p-4">
+      <NuxtPage />
     </section>
 
     <footer class="bg-green-400 h-full">
       <section class="h-full w-full container mx-auto p-4">
         <img class="mb-24 pt-8" src="~assets/svg/footerLogo.svg" />
         <div class="">
-          <span class="font-black">&COPY;2023 JANIEC<span class=" font-normal">PARADAISE</span></span>
+          <span>&COPY;2023 JaniecGames</span>
         </div>
       </section>
     </footer>
   </main>
 </template>
+
+<style>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.2s;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
+</style>
