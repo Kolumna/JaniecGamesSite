@@ -33,7 +33,7 @@
               <i class="material-icons mx-2">login</i>
               <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
               </div>
-              <button id="login-btn" class="btn">Login</button>
+              <button id="login-btn" class="btn">LOGIN</button>
             </NuxtLink>
           </div>
         </section>
