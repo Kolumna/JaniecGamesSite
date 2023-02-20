@@ -17,7 +17,7 @@
         >
           <section class="w-full flex flex-col justify-between">
             <h1 class="font-bold text-4xl p-8">
-              Lorem ipsum dolor sit amet consectetur...
+              <NuxtLink class="hover:underline" to="/ipsum-dolor-sit-amet-consectetur">ipsum dolor sit amet consectetur...</NuxtLink>
             </h1>
             <div class="flex gap-2 items-center p-8">
               <div class="bg-green-400 w-4 h-4"></div>
@@ -31,10 +31,7 @@
           </section>
         </section>
       </section>
-      <button class="bg-green-400 p-2 pl-4 pr-4 font-bold text-left">
-        WIĘCEJ<br />
-        AKTUALNOŚCI
-      </button>
+      <Btn :text='`WIĘCEJ AKTUALNOŚCI`' to="/news" />
     </section>
   </main>
 </template>

@@ -20,12 +20,7 @@
               <img src="~assets/svg/logo.svg" />
             </NuxtLink>
             <section class="flex items-end gap-8">
-              <NuxtLink class="relative" to="/games">
-                <div class="bg-white w-full h-full absolute -z-10"></div>
-                <button class="btn">
-                  GRY
-                </button>
-              </NuxtLink>
+              <Btn text="GRY" to="/games" />
             </section>
           </div>
           <div class="flex items-end">
