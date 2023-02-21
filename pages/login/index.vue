@@ -3,16 +3,16 @@ definePageMeta({
   layout: "products",
 });
 
+const credentials = ref()
+
 const signIn = async () => {
   const email = "test@test.pl";
   const password = "123456";
-  const credentials = await signInUser(email, password);
-  console.log("credentials", credentials);
+  credentials.value = await signInUser(email, password);
 };
 
 const signOut = async () => {
   const result = await signOutUser();
-  console.log("credentials", result);
 };
 
 onMounted(async () => {
@@ -46,6 +46,9 @@ onMounted(async () => {
         placeholder="HASŁO"
       />
       <button @click="signIn" class="bg-white p-2">Zaloguj</button>
+      <pre class="text-white w-96">
+        {{ credentials }}
+      </pre>
     </section>
   </section>
 </template>
