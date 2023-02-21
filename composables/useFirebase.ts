@@ -38,9 +38,6 @@ export const initUser = async () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      console.log("zmiana", user);
-    } else {
-      console.log("zmiana", user);
     }
     firebaseUser.value = user;
   });
@@ -49,5 +46,4 @@ export const initUser = async () => {
 export const signOutUser = async () => {
   const auth = getAuth();
   const result = await auth.signOut();
-  console.log("Wylogowano");
 };

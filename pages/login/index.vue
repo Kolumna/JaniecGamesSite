@@ -1,6 +1,6 @@
 <script setup>
 definePageMeta({
-  layout: "products",
+  layout: "products"
 });
 
 const user = useUser();
@@ -39,16 +39,26 @@ onMounted(async () => {
       </div>
       <input
         type="text"
-        class="p-2 h-12 w-full font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
+        class="p-4 h-12 w-full outline-none transition-all duration-200 font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
         placeholder="LOGIN"
       />
       <input
         type="password"
-        class="p-2 h-12 w-full font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
+        class="p-4 h-12 w-full outline-none transition-all duration-200 font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
         placeholder="HASŁO"
       />
-      <button v-if="!user" @click="signIn" class="bg-white p-2">Zaloguj</button>
-      <button v-if="user" @click="signOut" class="bg-white p-2">Wyloguj</button>
+      <div v-if="!user" class="relative">
+        <div
+          class="bg-white flex items-center w-full h-full absolute -z-10"
+        ></div>
+        <button @click="signIn" class="btn">Zaloguj</button>
+      </div>
+      <div v-if="user" class="relative">
+        <div
+          class="bg-white flex items-center w-full h-full absolute -z-10"
+        ></div>
+        <button @click="signOut" class="btn">Wyloguj</button>
+      </div>
       <div v-if="user">
         <ClientOnly>
           <pre class="text-white w-96">
