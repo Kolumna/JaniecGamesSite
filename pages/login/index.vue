@@ -3,7 +3,9 @@ definePageMeta({
   layout: "products",
 });
 
-const credentials = ref()
+const user = useUser();
+
+const credentials = ref();
 
 const signIn = async () => {
   const email = "test@test.pl";
@@ -46,9 +48,15 @@ onMounted(async () => {
         placeholder="HASŁO"
       />
       <button @click="signIn" class="bg-white p-2">Zaloguj</button>
-      <pre class="text-white w-96">
+      <div v-if="user">
+        <button @click="signOut" class="bg-white p-2">Wyloguj</button>
+        <ClientOnly>
+          <pre class="text-white w-96">
         {{ credentials }}
-      </pre>
+      </pre
+          >
+        </ClientOnly>
+      </div>
     </section>
   </section>
 </template>

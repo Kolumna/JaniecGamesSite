@@ -33,12 +33,16 @@ export const signInUser = async (email, password) => {
 
 export const initUser = async () => {
   const auth = getAuth();
+  const firebaseUser = useUser();
+  firebaseUser.value = auth.currentUser;
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      console.log(user);
+      console.log("zmiana", user);
     } else {
+      console.log("zmiana", user);
     }
+    firebaseUser.value = user;
   });
 };
 
