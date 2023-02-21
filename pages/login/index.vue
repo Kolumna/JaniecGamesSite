@@ -47,12 +47,12 @@ onMounted(async () => {
         class="p-2 h-12 w-full font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
         placeholder="HASŁO"
       />
-      <button @click="signIn" class="bg-white p-2">Zaloguj</button>
+      <button v-if="!user" @click="signIn" class="bg-white p-2">Zaloguj</button>
+      <button v-if="user" @click="signOut" class="bg-white p-2">Wyloguj</button>
       <div v-if="user">
-        <button @click="signOut" class="bg-white p-2">Wyloguj</button>
         <ClientOnly>
           <pre class="text-white w-96">
-        {{ credentials }}
+        {{ user }}
       </pre
           >
         </ClientOnly>
