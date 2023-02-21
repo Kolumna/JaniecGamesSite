@@ -18,6 +18,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@nuxtjs/svg": "^0.4.0"
+    "@nuxtjs/svg": "^0.4.0",
+    "firebase": "^9.17.1"
   }
 }
