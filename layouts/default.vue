@@ -1,3 +1,7 @@
+<script setup>
+const user = useUser();
+</script>
+
 <template>
   <main class="overflow-x-hidden">
     <header>
@@ -23,8 +27,11 @@
               <Btn text="GRY" to="/games" />
             </section>
           </div>
+          <div v-if="user" class="flex justify-center items-end">
+            <span class="text-white font-black">Cześć <span class="font-thin text-green-400">{{ user.email }}</span>!</span>
+          </div>
           <div class="flex items-end">
-            <NuxtLink class="relative flex items-center" to="/login">
+            <NuxtLink class="relative flex items-center" to="/profile/login">
               <i class="material-icons mx-2">login</i>
               <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
               </div>

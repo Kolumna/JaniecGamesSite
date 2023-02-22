@@ -37,6 +37,7 @@ onMounted(async () => {
           >Sry, usługi chwilowo nie dostępne :(</span
         >
       </div>
+      <NuxtLink class="text-white" to="/profile/secret">sekret</NuxtLink>
       <input
         type="text"
         class="p-4 h-12 w-full outline-none transition-all duration-200 font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
@@ -58,14 +59,6 @@ onMounted(async () => {
           class="bg-white flex items-center w-full h-full absolute -z-10"
         ></div>
         <button @click="signOut" class="btn">Wyloguj</button>
-      </div>
-      <div v-if="user">
-        <ClientOnly>
-          <pre class="text-white w-96">
-        {{ user }}
-      </pre
-          >
-        </ClientOnly>
       </div>
     </section>
   </section>
