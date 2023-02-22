@@ -1,5 +1,9 @@
 <script setup>
 const user = useUser();
+
+const signOut = () => {
+  signOutUser();
+};
 </script>
 
 <template>
@@ -27,17 +31,25 @@ const user = useUser();
               <Btn text="GRY" to="/games" />
             </section>
           </div>
-          <div v-if="user" class="flex justify-center items-end">
+          <section class="flex gap-12">
+            <div v-if="user" class="flex justify-center items-end">
             <span class="text-white font-black">Cześć <span class="font-thin text-green-400">{{ user.email }}</span>!</span>
           </div>
           <div class="flex items-end">
-            <NuxtLink class="relative flex items-center" to="/profile/login">
+            <NuxtLink v-if="!user" class="relative flex items-center" to="/profile/login">
               <i class="material-icons mx-2">login</i>
               <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
               </div>
               <button id="login-btn" class="btn">LOGIN</button>
             </NuxtLink>
+            <div v-if="user" class="relative flex items-center" to="/profile/login">
+              <i class="material-icons mx-2">logout</i>
+              <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
+              </div>
+              <button @click="signOut" id="login-btn" class="btn">WYLOGUJ</button>
+            </div>
           </div>
+          </section>
         </section>
       </nav>
     </header>
