@@ -1,23 +1,32 @@
 <script setup>
 const user = useUser();
+const username = useUserData();
 
 const signOut = () => {
   signOutUser();
 };
+
+// console.log(user.value)
 </script>
 
 <template>
   <main class="overflow-x-hidden">
     <header>
-      <nav class="container mx-auto pb-2 mb-24 px-4 gap-12 flex justify-between flex-col">
+      <nav
+        class="container mx-auto pb-2 mb-24 px-4 gap-12 flex justify-between flex-col"
+      >
         <section class="flex gap-8">
           <a href="" target="_blank">
-            <button class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200">
+            <button
+              class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+            >
               JANIECPARADAISE
             </button>
           </a>
           <a href="https://www.janiectheme.site/" target="_blank">
-            <button class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200">
+            <button
+              class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+            >
               WSPÓŁPRACA
             </button>
           </a>
@@ -33,28 +42,46 @@ const signOut = () => {
           </div>
           <section class="flex gap-12">
             <div v-if="user" class="flex justify-center items-end">
-            <span class="text-white font-black">Cześć <span class="font-thin text-green-400">{{ user.email }}</span>!</span>
-          </div>
-          <div class="flex items-end">
-            <NuxtLink v-if="!user" class="relative flex items-center" to="/profile/login">
-              <i class="material-icons mx-2">login</i>
-              <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
-              </div>
-              <button id="login-btn" class="btn">LOGIN</button>
-            </NuxtLink>
-            <div v-if="user" class="relative flex items-center" to="/profile/login">
-              <i class="material-icons mx-2">logout</i>
-              <div for="login-btn" class="bg-white flex items-center w-full h-full absolute -z-10">
-              </div>
-              <button @click="signOut" id="login-btn" class="btn">WYLOGUJ</button>
+              <span class="text-white font-black text-2xl"
+                >Cześć
+                <span class="font-thin text-green-400">{{ username }}</span
+                >!</span
+              >
             </div>
-          </div>
+            <div class="flex items-end">
+              <NuxtLink
+                v-if="!user"
+                class="relative flex items-center"
+                to="/profile/login"
+              >
+                <i class="material-icons mx-2">login</i>
+                <div
+                  for="login-btn"
+                  class="bg-white flex items-center w-full h-full absolute -z-10"
+                ></div>
+                <button id="login-btn" class="btn">LOGIN</button>
+              </NuxtLink>
+              <div
+                v-if="user"
+                class="relative flex items-center"
+                to="/profile/login"
+              >
+                <i class="material-icons mx-2">logout</i>
+                <div
+                  for="login-btn"
+                  class="bg-white flex items-center w-full h-full absolute -z-10"
+                ></div>
+                <button @click="signOut" id="login-btn" class="btn">
+                  WYLOGUJ
+                </button>
+              </div>
+            </div>
           </section>
         </section>
       </nav>
     </header>
 
-    <section class="container mx-auto min-h-[750px] p-4">
+    <section class="container mx-auto min-h-[750px] p-4 mb-12">
       <NuxtPage />
     </section>
 

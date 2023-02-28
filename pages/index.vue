@@ -31,7 +31,7 @@
           </section>
         </section>
       </section>
-      <Btn :text='`WIĘCEJ AKTUALNOŚCI`' to="/news" />
+      <Btn :text='`WIĘCEJ AKTUALNOŚCI`' to="/posts" />
     </section>
   </main>
 </template>

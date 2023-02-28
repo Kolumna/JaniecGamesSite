@@ -7,6 +7,7 @@
 <style scoped>
 main {
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 .page-enter-active,
 .page-leave-active {

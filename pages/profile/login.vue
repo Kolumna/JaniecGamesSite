@@ -3,8 +3,6 @@ definePageMeta({
   layout: "account",
 });
 
-const user = useUser();
-
 const email = ref("");
 const password = ref("");
 const alert = ref(false);
@@ -105,13 +103,6 @@ onMounted(async () => {
           >Załóż konto</NuxtLink
         >
       </form>
-
-      <div v-if="user" class="relative">
-        <div
-          class="bg-white flex items-center w-full h-full absolute -z-10"
-        ></div>
-        <button @click="signOut" class="btn">Wyloguj</button>
-      </div>
     </section>
   </section>
 </template>
