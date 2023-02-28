@@ -3,20 +3,24 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss"],
   app: {
     head: {
-      title: 'JaniecGames',
-      meta: [
-        {name: 'description', content: 'test'}
-      ],
+      title: "JaniecGames",
+      meta: [{ name: "description", content: "test" }],
       link: [
-        {rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons'}
-      ]
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/icon?family=Material+Icons",
+        },
+      ],
     },
-    pageTransition: { name: 'page', mode: 'out-in' }
+    pageTransition: { name: "page", mode: "out-in" },
   },
   runtimeConfig: {
     FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     public: {
-      FIREBASE_API_KEY: process.env.FIREBASE_API_KEY
-    }
-  }
+      FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
+    },
+  },
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css'
+  ]
 });

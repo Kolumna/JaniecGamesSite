@@ -4,7 +4,7 @@
   </main>
 </template>
 
-<style>
+<style scoped>
 main {
   overflow-y: hidden;
 }

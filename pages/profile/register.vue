@@ -10,8 +10,11 @@ const login = ref("");
 const password = ref("");
 
 const CreateAccount = async () => {
-  createUser(email.value, password.value);
-  console.log('tworzymy: ', email.value, password.value)
+  await createUser(email.value, password.value).then((res) =>
+    res ? navigateTo("/") : alert("Error")
+  );
+
+  console.log("tworzymy: ", email.value, password.value);
 };
 </script>
 
@@ -29,10 +32,13 @@ const CreateAccount = async () => {
           >Sry, usługi chwilowo nie dostępne :(</span
         >
       </div>
-      <form @submit.prevent="CreateAccount" class="flex flex-col w-full gap-8 justify-center items-center">
+      <form
+        @submit.prevent="CreateAccount"
+        class="flex flex-col w-full gap-8 justify-center items-center"
+      >
         <input
           v-model="email"
-          type="text"
+          type="email"
           class="p-4 h-12 w-full outline-none transition-all duration-200 font-bold focus:bg-white bg-green-400 placeholder:text-black placeholder:font-bold"
           placeholder="E-MAIL"
           required
@@ -54,7 +60,7 @@ const CreateAccount = async () => {
           <div
             class="bg-white flex items-center w-full h-full absolute -z-10"
           ></div>
-          <button type="submit" @click="signIn" class="btn">ZAREJESTRUJ</button>
+          <button type="submit" class="btn">ZAREJESTRUJ</button>
         </div>
       </form>
       <NuxtLink

@@ -5,7 +5,7 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-export const createUser = async (email, password) => {
+export const createUser = async (email: string, password: string) => {
   const auth = getAuth();
   const credentials = await createUserWithEmailAndPassword(
     auth,
@@ -18,22 +18,19 @@ export const createUser = async (email, password) => {
   return credentials;
 };
 
-export const signInUser = async (email, password) => {
+export const signInUser = async (email: string, password: string) => {
   const auth = getAuth();
-  const credentials = await signInWithEmailAndPassword(
-    auth,
-    email,
-    password
-  ).catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-  });
+  const credentials = await signInWithEmailAndPassword(auth, email, password)
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+    });
   return credentials;
 };
 
 export const initUser = async () => {
   const auth = getAuth();
-  const firebaseUser = useUser();
+  const firebaseUser: any = useUser();
   firebaseUser.value = auth.currentUser;
   onAuthStateChanged(auth, (user) => {
     if (user) {
