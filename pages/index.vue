@@ -59,7 +59,7 @@ getPostsData().then((res) => (post.value = res));
     </section>
     <section
       v-if="!post"
-      class="w-full h-full bg-zinc-800 animate-pulse"
+      class="w-full h-96 bg-zinc-800 animate-pulse"
     ></section>
   </main>
 </template>
