@@ -41,10 +41,10 @@ const signOut = () => {
             </section>
           </div>
           <section class="lg:hidden">
-            <div class="w-12 h-full flex justify-center items-end flex-col gap-2 cursor-pointer">
-              <div class="w-full h-2 bg-green-400"></div>
-              <div class="w-full h-2 bg-green-400"></div>
-              <div class="w-full h-2 bg-green-400"></div>
+            <div class="w-[45px] h-full flex justify-center items-end flex-col gap-2 cursor-pointer">
+              <div class="w-full h-[6px] bg-green-400"></div>
+              <div class="w-full h-[6px] bg-green-400"></div>
+              <div class="w-full h-[6px] bg-green-400"></div>
             </div>
           </section>
           <section class="hidden lg:flex gap-12">

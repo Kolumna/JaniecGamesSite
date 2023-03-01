@@ -1,16 +1,23 @@
 <template>
   <main class="flex lg:flex-row flex-col gap-24 lg:h-[512px]">
-    <section class="w-full bg-white">
-      <section class="w-full h-full bg-green-400 translate-x-4 translate-y-4 pb-8">
-        <h1 class="text-6xl font-bold p-8">News</h1>
-        <p class="text-2xl px-8">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique
-          omnis, cumque eveniet voluptates ut tempore fugiat id iste recusandae
-          animi laborum numquam iusto quod ab nobis vero beatae laboriosam?
-        </p>
+    <section class="flex flex-col items-center justify-center w-full">
+      <section class="w-full bg-white mr-4">
+        <section
+          class="w-full h-full bg-green-400 translate-x-4 translate-y-4 pb-8"
+        >
+          <h1 class="text-6xl w-full font-bold p-8">News</h1>
+          <p class="text-2xl px-8">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Est
+            similique omnis, cumque eveniet voluptates ut tempore fugiat id iste
+            recusandae animi laborum numquam iusto quod ab nobis vero beatae
+            laboriosam?
+          </p>
+        </section>
       </section>
     </section>
-    <section class="w-full flex flex-col items-center lg:items-end justify-between">
+    <section
+      class="w-full flex flex-col items-center lg:items-end justify-between"
+    >
       <section class="bg-green-400 lg:h-[360px] w-full mr-4">
         <section
           class="bg-white flex justify-between flex-col lg:flex-row h-full translate-x-4 translate-y-4"
