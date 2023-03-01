@@ -23,9 +23,12 @@ getData();
 <template>
   <main class="flex flex-col gap-12">
     <section class="flex flex-col gap-12" v-if="data">
-      <h1 class="text-white text-6xl font-bold">
-        {{ data.title }}
-      </h1>
+      <div class="flex flex-col gap-4">
+        <h1 class="text-white text-6xl font-bold">
+          {{ data.title }}
+        </h1>
+        <span class="text-xl font-bold text-green-400">{{ data.date }}</span>
+      </div>
       <p class="text-white text-3xl">
         {{ data.text }}
       </p>

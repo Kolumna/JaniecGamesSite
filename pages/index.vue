@@ -50,7 +50,7 @@ getPostsData().then((res) => (post.value = res));
             </h1>
             <div class="flex gap-2 items-center p-8">
               <div class="bg-green-400 w-4 h-4"></div>
-              <span>19.02.2023</span>
+              <span class="font-bold">{{ post[0].dane.date }}</span>
             </div>
           </section>
         </section>

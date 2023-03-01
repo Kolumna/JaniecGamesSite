@@ -13,21 +13,31 @@ const signOut = () => {
       <nav
         class="container mx-auto pb-2 lg:mb-24 mt-12 lg:mt-0 mb-8 px-4 gap-12 flex justify-between flex-col"
       >
-        <section class="hidden lg:flex gap-8">
-          <a href="" target="_blank">
-            <button
-              class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
-            >
-              JANIECPARADAISE
-            </button>
-          </a>
-          <a href="https://www.janiectheme.site/" target="_blank">
-            <button
-              class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
-            >
-              WSPÓŁPRACA
-            </button>
-          </a>
+        <section class="flex justify-between">
+          <section class="hidden lg:flex gap-8">
+            <a href="" target="_blank">
+              <button
+                class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+              >
+                JANIECPARADAISE
+              </button>
+            </a>
+            <a href="https://www.janiectheme.site/" target="_blank">
+              <button
+                class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+              >
+                WSPÓŁPRACA
+              </button>
+            </a>
+          </section>
+          <section v-if="user" class="hidden lg:flex">
+            <div class="bg-green-400 flex justify-center items-center">
+              <i class="material-icons mx-2">account_circle</i>
+            </div>
+            <div class="h-full bg-white px-8 flex justify-center font-bold">
+              {{ username }}
+            </div>
+          </section>
         </section>
         <section class="flex justify-between gap-8">
           <div class="flex gap-8 w-64 lg:w-auto">
@@ -93,10 +103,15 @@ const signOut = () => {
     </section>
 
     <footer class="bg-green-400 h-full">
-      <section class="h-full w-full container mx-auto p-4">
-        <img class="mb-24 pt-8" src="~assets/svg/footerLogo.svg" />
-        <div class="font-bold">
-          <span>&COPY;2023 JaniecGames</span>
+      <section class="h-full w-full flex justify-between container mx-auto p-4 pt-12">
+        <div class="flex flex-col gap-24">
+          <img class="" src="~assets/svg/footerLogo.svg" />
+          <div class="font-bold">
+            <span>&COPY;2023 JaniecGames</span>
+          </div>
+        </div>
+        <div class="flex items-start">
+          <img class="" src="~assets/svg/JLab.svg" />
         </div>
       </section>
     </footer>

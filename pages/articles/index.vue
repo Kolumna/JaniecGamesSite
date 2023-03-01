@@ -16,15 +16,13 @@ getPostsData().then((res) => (posts.value = res));
             <div class="bg-gray-100 w-full h-full">PHOTO</div>
             <div class="flex items-center gap-2">
               <div class="h-4 w-6 bg-zinc-800"></div>
-              <span class="font-bold">date DD/MM/RR</span>
+              <span class="font-bold">{{ post.dane.date }}</span>
             </div>
           </section>
         </NuxtLink>
       </section>
     </section>
     <section v-if="!posts" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      <section class="w-full h-96 bg-zinc-800 animate-pulse"></section>
-      <section class="w-full h-96 bg-zinc-800 animate-pulse"></section>
       <section class="w-full h-96 bg-zinc-800 animate-pulse"></section>
       <section class="w-full h-96 bg-zinc-800 animate-pulse"></section>
       <section class="w-full h-96 bg-zinc-800 animate-pulse"></section>
