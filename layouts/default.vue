@@ -13,9 +13,9 @@ const signOut = () => {
   <main class="overflow-x-hidden">
     <header>
       <nav
-        class="container mx-auto pb-2 mb-24 px-4 gap-12 flex justify-between flex-col"
+        class="container mx-auto pb-2 lg:mb-24 mt-12 mb-8 px-4 gap-12 flex justify-between flex-col"
       >
-        <section class="flex gap-8">
+        <section class="hidden lg:flex gap-8">
           <a href="" target="_blank">
             <button
               class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
@@ -32,15 +32,22 @@ const signOut = () => {
           </a>
         </section>
         <section class="flex justify-between gap-8">
-          <div class="flex gap-8">
-            <NuxtLink to="/">
+          <div class="flex gap-8 w-64 lg:w-auto">
+            <NuxtLink class="" to="/">
               <img src="~assets/svg/logo.svg" />
             </NuxtLink>
-            <section class="flex items-end gap-8">
+            <section class="hidden lg:flex items-end gap-8">
               <Btn text="GRY" to="/games" />
             </section>
           </div>
-          <section class="flex gap-12">
+          <section class="lg:hidden">
+            <div class="w-12 h-full flex justify-center items-end flex-col gap-2 cursor-pointer">
+              <div class="w-full h-2 bg-green-400"></div>
+              <div class="w-full h-2 bg-green-400"></div>
+              <div class="w-full h-2 bg-green-400"></div>
+            </div>
+          </section>
+          <section class="hidden lg:flex gap-12">
             <div v-if="user" class="flex justify-center items-end">
               <span class="text-white font-black text-2xl"
                 >Cześć
@@ -81,7 +88,7 @@ const signOut = () => {
       </nav>
     </header>
 
-    <section class="container mx-auto min-h-[750px] p-4 mb-12">
+    <section class="container mx-auto min-h-[750px] p-8 mb-12">
       <NuxtPage />
     </section>
 

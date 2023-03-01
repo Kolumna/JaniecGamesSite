@@ -1,7 +1,7 @@
 <template>
-  <main class="flex gap-24 h-[512px]">
+  <main class="flex lg:flex-row flex-col gap-24 lg:h-[512px]">
     <section class="w-full bg-white">
-      <section class="w-full h-full bg-green-400 translate-x-4 translate-y-4">
+      <section class="w-full h-full bg-green-400 translate-x-4 translate-y-4 pb-8">
         <h1 class="text-6xl font-bold p-8">News</h1>
         <p class="text-2xl px-8">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est similique
@@ -10,28 +10,32 @@
         </p>
       </section>
     </section>
-    <section class="w-full flex flex-col items-end justify-between">
-      <section class="bg-green-400 h-[360px] w-full mr-4">
+    <section class="w-full flex flex-col items-center lg:items-end justify-between">
+      <section class="bg-green-400 lg:h-[360px] w-full mr-4">
         <section
-          class="bg-white flex justify-between h-full translate-x-4 translate-y-4"
+          class="bg-white flex justify-between flex-col lg:flex-row h-full translate-x-4 translate-y-4"
         >
+          <section
+            class="bg-gray-200 w-full min-h-[280px] flex justify-center items-center"
+          >
+            <i class="material-icons scale-[400%]">photo</i>
+          </section>
           <section class="w-full flex flex-col justify-between">
             <h1 class="font-bold text-4xl p-8">
-              <NuxtLink class="hover:underline" to="/ipsum-dolor-sit-amet-consectetur">ipsum dolor sit amet consectetur...</NuxtLink>
+              <NuxtLink
+                class="hover:underline"
+                to="/ipsum-dolor-sit-amet-consectetur"
+                >ipsum dolor sit amet consectetur...</NuxtLink
+              >
             </h1>
             <div class="flex gap-2 items-center p-8">
               <div class="bg-green-400 w-4 h-4"></div>
               <span>19.02.2023</span>
             </div>
           </section>
-          <section
-            class="bg-gray-200 w-full h-full flex justify-center items-center"
-          >
-            <i class="material-icons scale-[400%]">photo</i>
-          </section>
         </section>
       </section>
-      <Btn :text='`WIĘCEJ AKTUALNOŚCI`' to="/posts" />
+      <Btn class="mt-16 lg:mt-0" :text="`WIĘCEJ AKTUALNOŚCI`" to="/posts" />
     </section>
   </main>
 </template>
