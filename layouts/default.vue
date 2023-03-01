@@ -14,7 +14,7 @@ const signOut = () => {
         class="container mx-auto pb-2 lg:mb-24 mt-12 lg:mt-0 mb-8 px-4 gap-12 flex justify-between flex-col"
       >
         <section class="flex justify-between">
-          <section class="hidden lg:flex gap-8">
+          <section class="hidden lg:flex gap-4">
             <a href="" target="_blank">
               <button
                 class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
@@ -30,22 +30,35 @@ const signOut = () => {
               </button>
             </a>
           </section>
-          <section v-if="user" class="hidden lg:flex">
-            <div class="bg-green-400 flex justify-center items-center">
-              <i class="material-icons mx-2">account_circle</i>
-            </div>
-            <div class="h-full bg-white px-8 flex justify-center font-bold">
-              {{ username }}
-            </div>
+          <section v-if="user" class="hidden lg:flex gap-4">
+            <section
+              class="bg-green-400 cursor-pointer hover:bg-white transition-all duration-200 h-full font-bold flex items-center justify-between"
+            >
+              <div class="flex justify-center items-center"><i class="material-icons mx-2">download</i></div>
+              <div class="px-2 pr-4">DO POBRANIA</div>
+            </section>
+            <section class="flex">
+              <div class="bg-green-400 flex justify-center items-center">
+                <i class="material-icons mx-2">account_circle</i>
+              </div>
+              <div
+                class="h-full bg-white px-8 flex justify-center items-center font-bold"
+              >
+                {{ username }}
+              </div>
+            </section>
           </section>
         </section>
         <section class="flex justify-between gap-8">
-          <div class="flex gap-8 w-64 lg:w-auto">
+          <div class="flex gap-4 w-64 lg:w-auto">
             <NuxtLink class="" to="/">
               <img src="~assets/svg/logo.svg" />
             </NuxtLink>
             <section class="hidden lg:flex items-end gap-8">
               <Btn text="GRY" to="/games" />
+            </section>
+            <section class="hidden lg:flex items-end gap-8">
+              <Btn text="AKTUALNOŚCI" to="/articles" />
             </section>
           </div>
           <section class="lg:hidden">
@@ -103,7 +116,9 @@ const signOut = () => {
     </section>
 
     <footer class="bg-green-400 h-full">
-      <section class="h-full w-full flex justify-between container mx-auto p-4 pt-12">
+      <section
+        class="h-full w-full flex justify-between container mx-auto p-4 pt-12"
+      >
         <div class="flex flex-col gap-24">
           <img class="" src="~assets/svg/footerLogo.svg" />
           <div class="font-bold">
