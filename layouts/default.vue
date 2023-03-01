@@ -5,15 +5,13 @@ const username = useUserData();
 const signOut = () => {
   signOutUser();
 };
-
-// console.log(user.value)
 </script>
 
 <template>
   <main class="overflow-x-hidden">
     <header>
       <nav
-        class="container mx-auto pb-2 lg:mb-24 mt-12 mb-8 px-4 gap-12 flex justify-between flex-col"
+        class="container mx-auto pb-2 lg:mb-24 mt-12 lg:mt-0 mb-8 px-4 gap-12 flex justify-between flex-col"
       >
         <section class="hidden lg:flex gap-8">
           <a href="" target="_blank">
@@ -41,7 +39,9 @@ const signOut = () => {
             </section>
           </div>
           <section class="lg:hidden">
-            <div class="w-[45px] h-full flex justify-center items-end flex-col gap-2 cursor-pointer">
+            <div
+              class="w-[45px] h-full flex justify-center items-end flex-col gap-2 cursor-pointer"
+            >
               <div class="w-full h-[6px] bg-green-400"></div>
               <div class="w-full h-[6px] bg-green-400"></div>
               <div class="w-full h-[6px] bg-green-400"></div>
@@ -59,7 +59,7 @@ const signOut = () => {
               <NuxtLink
                 v-if="!user"
                 class="relative flex items-center"
-                to="/profile/login"
+                to="/auth/login"
               >
                 <i class="material-icons mx-2">login</i>
                 <div
@@ -71,7 +71,7 @@ const signOut = () => {
               <div
                 v-if="user"
                 class="relative flex items-center"
-                to="/profile/login"
+                to="/auth/login"
               >
                 <i class="material-icons mx-2">logout</i>
                 <div
@@ -88,14 +88,14 @@ const signOut = () => {
       </nav>
     </header>
 
-    <section class="container mx-auto min-h-[750px] p-8 mb-12">
+    <section class="container mx-auto min-h-[750px] p-8 lg:p-4 mb-12">
       <NuxtPage />
     </section>
 
     <footer class="bg-green-400 h-full">
       <section class="h-full w-full container mx-auto p-4">
         <img class="mb-24 pt-8" src="~assets/svg/footerLogo.svg" />
-        <div class="">
+        <div class="font-bold">
           <span>&COPY;2023 JaniecGames</span>
         </div>
       </section>

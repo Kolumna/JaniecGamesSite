@@ -99,7 +99,7 @@ onMounted(async () => {
         </div>
         <NuxtLink
           class="text-white font-black text-xl hover:text-green-400 transition-all duration-200"
-          to="/profile/register"
+          to="/auth/register"
           >Załóż konto</NuxtLink
         >
       </form>

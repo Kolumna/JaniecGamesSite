@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 
@@ -20,8 +20,16 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   initUser();
 
-  const auth = getAuth(app);
+  const auth = getAuth();
   const db = getFirestore(app);
+
+  // const test: Array<any> = []
+
+  // onAuthStateChanged(auth, async (user) => {
+  //   if (user) {
+  //     return test.push('elo')
+  //   }
+  // });
 
   nuxtApp.vueApp.provide("auth", auth);
   nuxtApp.provide("auth", auth);

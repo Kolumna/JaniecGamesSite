@@ -86,7 +86,7 @@ const CreateAccount = async () => {
       </form>
       <NuxtLink
         class="text-white font-black text-xl hover:text-green-400 transition-all duration-200"
-        to="/profile/login"
+        to="/auth/login"
         >Zaloguj się</NuxtLink
       >
     </section>

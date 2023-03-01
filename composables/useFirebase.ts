@@ -4,7 +4,15 @@ import {
   signInWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import { getFirestore, doc, setDoc, getDoc, DocumentData } from "firebase/firestore";
+import {
+  getFirestore,
+  doc,
+  setDoc,
+  getDoc,
+  query,
+  collection,
+  getDocs,
+} from "firebase/firestore";
 
 export const createUser = async (
   email: string,
@@ -22,8 +30,8 @@ export const createUser = async (
   });
   try {
     await profileSet(credentials?.user?.uid, username);
-  } catch(err) {
-    alert('Coś poszlo nie tak :(')
+  } catch (err) {
+    alert("Coś poszlo nie tak :(");
   }
   return credentials;
 };
@@ -76,4 +84,26 @@ export const getUserData = async (uid: string) => {
   const docSnap = await getDoc(docRef);
   const result: any = docSnap.data();
   return result.username;
+};
+
+export const getPostsData = async () => {
+  const db = getFirestore();
+  const q: any = query(collection(db, "posts"));
+  const querySnap = await getDocs(q);
+  const result: Array<any> = [];
+  querySnap.forEach((e) => {
+    result.push({ dane: e.data(), id: e.id });
+  });
+  return result;
+};
+
+export const getPostDetails = async (id: string) => {
+  const db = getFirestore();
+  const docRef = doc(db, "posts", id);
+  const docSnap: any = await getDoc(docRef).catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+  });
+  const result: any = docSnap.data();
+  return result;
 };
