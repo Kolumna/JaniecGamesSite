@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faGoogle,  
   faGithubSquare,
+  faWindows,
 } from "@fortawesome/free-brands-svg-icons";
 
-library.add(faGithubSquare, faGoogle);
+library.add(faGithubSquare, faGoogle, faWindows);
 
 // This is important, we are going to let Nuxt worry about the CSS
 config.autoAddCss = false;

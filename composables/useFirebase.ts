@@ -38,6 +38,7 @@ export const createUser = async (
 
 export const signInUser = async (email: string, password: string) => {
   const auth = getAuth();
+  // console.log('logowanie')
   const credentials = await signInWithEmailAndPassword(
     auth,
     email,
@@ -54,6 +55,7 @@ export const initUser = async () => {
   const firebaseUser: any = useUser();
   firebaseUser.value = auth.currentUser;
 
+  // console.log('sprawdzam auth')
   onAuthStateChanged(auth, async (user) => {
     if (user) {
       const uid = user.uid;

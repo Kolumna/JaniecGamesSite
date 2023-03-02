@@ -5,7 +5,7 @@ getPostsData().then((res) => (post.value = res));
 
 <template>
   <main class="flex lg:flex-row flex-col gap-24 lg:min-h-[512px]">
-    <section class="flex flex-col items-center justify-start w-full">
+    <section class="flex items-center justify-start w-full">
       <section class="w-full bg-white mr-4">
         <section
           class="w-full h-full bg-green-400 translate-x-4 translate-y-4 pb-8"

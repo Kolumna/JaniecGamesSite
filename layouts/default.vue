@@ -17,26 +17,30 @@ const signOut = () => {
           <section class="hidden lg:flex gap-4">
             <a href="" target="_blank">
               <button
-                class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+                class="bg-green-400 h-8 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
               >
                 JANIECPARADAISE
               </button>
             </a>
             <a href="https://www.janiectheme.site/" target="_blank">
               <button
-                class="bg-green-400 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
+                class="bg-green-400 h-8 p-1 px-4 text-sm font-bold hover:bg-white transition-all duration-200"
               >
                 WSPÓŁPRACA
               </button>
             </a>
           </section>
-          <section v-if="user" class="hidden lg:flex gap-4">
-            <section
-              class="bg-green-400 cursor-pointer hover:bg-white transition-all duration-200 h-full font-bold flex items-center justify-between"
-            >
-              <div class="flex justify-center items-center"><i class="material-icons mx-2">download</i></div>
-              <div class="px-2 pr-4">DO POBRANIA</div>
-            </section>
+          <section v-if="user" class="hidden lg:flex h-8 gap-4">
+            <NuxtLink to="/downloads">
+              <section
+                class="bg-green-400 hover:bg-white transition-all duration-200 h-full font-bold flex items-center justify-between"
+              >
+                <div class="flex justify-center items-center">
+                  <i class="material-icons mx-2">download</i>
+                </div>
+                <div class="px-2 pr-4 text-sm">DO POBRANIA</div>
+              </section>
+            </NuxtLink>
             <section class="flex">
               <div class="bg-green-400 flex justify-center items-center">
                 <i class="material-icons mx-2">account_circle</i>
