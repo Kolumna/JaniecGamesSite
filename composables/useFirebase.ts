@@ -94,7 +94,7 @@ export const getPostsData = async () => {
   const querySnap = await getDocs(q);
   const result: Array<any> = [];
   querySnap.forEach((e) => {
-    result.push({ dane: e.data(), id: e.id });
+    result.unshift({ dane: e.data(), id: e.id });
   });
   return result;
 };

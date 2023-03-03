@@ -21,25 +21,30 @@ getData();
 </script>
 
 <template>
-  <main class="flex flex-col gap-12">
-    <section class="flex flex-col gap-12" v-if="data">
-      <div class="flex flex-col gap-4">
-        <h1 class="text-white text-6xl font-bold">
-          {{ data.title }}
-        </h1>
-        <span class="text-xl font-bold text-green-400">{{ data.date }}</span>
-      </div>
-      <p class="text-white text-3xl">
-        {{ data.text }}
-      </p>
+  <main class="flex justify-between">
+    <section class="flex flex-col gap-12">
+      <section class="flex flex-col gap-12" v-if="data">
+        <div class="flex flex-col gap-4">
+          <h1 class="text-white text-6xl font-bold">
+            {{ data.title }}
+          </h1>
+          <span class="text-xl font-bold text-green-400 mt-4">{{ data.date }}</span>
+        </div>
+        <p class="text-white text-3xl">
+          {{ data.text }}
+        </p>
+      </section>
+      <section
+        v-if="!data"
+        class="w-full h-96 bg-zinc-800 animate-pulse"
+      ></section>
+      <section
+        v-if="!data"
+        class="w-full h-36 bg-zinc-800 animate-pulse"
+      ></section>
     </section>
-    <section
-      v-if="!data"
-      class="w-full h-96 bg-zinc-800 animate-pulse"
-    ></section>
-    <section
-      v-if="!data"
-      class="w-full h-36 bg-zinc-800 animate-pulse"
-    ></section>
+    <section v-if="data?.image">
+      <img :src="data.image" />
+    </section>
   </main>
 </template>

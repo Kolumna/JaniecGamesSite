@@ -75,13 +75,13 @@ const signOut = () => {
             </div>
           </section>
           <section class="hidden lg:flex gap-12">
-            <div v-if="user" class="flex justify-center items-end">
+            <!--<div v-if="user" class="flex justify-center items-end">
               <span class="text-white font-black text-2xl"
                 >Cześć
                 <span class="font-thin text-green-400">{{ username }}</span
                 >!</span
               >
-            </div>
+            </div>-->
             <div class="flex items-end">
               <NuxtLink
                 v-if="!user"
@@ -93,7 +93,7 @@ const signOut = () => {
                   for="login-btn"
                   class="bg-white flex items-center w-full h-full absolute -z-10"
                 ></div>
-                <button id="login-btn" class="btn">LOGIN</button>
+                <button id="login-btn" class="btn">ZALOGUJ</button>
               </NuxtLink>
               <div
                 v-if="user"
