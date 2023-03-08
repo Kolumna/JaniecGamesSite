@@ -102,6 +102,11 @@ onMounted(async () => {
           to="/auth/register"
           >Załóż konto</NuxtLink
         >
+        <NuxtLink
+          class="text-white font-black text-xl hover:text-green-400 transition-all duration-200"
+          to="/auth/reminder"
+          >Zresetuj hasło</NuxtLink
+        >
       </form>
     </section>
   </section>
