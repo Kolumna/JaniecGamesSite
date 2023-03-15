@@ -16,8 +16,8 @@ getPostsData().then((res) => (post.value = res));
           <div class="text-6xl mb-8">
             <font-awesome-icon icon="fa-brands fa-windows" />
           </div>
-          <p class="text-xl lg:text-3xl mb-8">
-            Już nie długo będziesz mógł pobrać najnowsze wersje naszych gier za pomocą JGamesLanuncher!
+          <p class="text-xl lg:text-3xl font-semibold mb-8">
+            Już niedługo! :)
           </p>
           <div class="flex justify-end">
             <button
