@@ -8,16 +8,25 @@ const signOut = () => {
   signOutUser();
 };
 
-const menu = reactive({
-  isOpen: false,
-});
-
 const route = useRoute();
 
 watch(
   route,
   (value) => {
     burger.value = false;
+  },
+  { deep: true, immediate: true }
+);
+
+//set overflow
+watch(
+  burger,
+  (value) => {
+    if (value) {
+      document.body.style.overflowY = "hidden";
+    } else {
+      document.body.style.overflowY = "auto";
+    }
   },
   { deep: true, immediate: true }
 );

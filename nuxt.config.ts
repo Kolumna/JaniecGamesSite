@@ -4,7 +4,10 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "JaniecGames",
-      meta: [{ name: "description", content: "test" }],
+      meta: [
+        { name: "description", content: "test" },
+        { name: "viewport", content: "width=device-width, initial-scale=1, minimum-scale=1" },
+      ],
       link: [
         {
           rel: "stylesheet",
@@ -20,7 +23,5 @@ export default defineNuxtConfig({
       FIREBASE_API_KEY: process.env.FIREBASE_API_KEY,
     },
   },
-  css: [
-    '@fortawesome/fontawesome-svg-core/styles.css'
-  ]
+  css: ["@fortawesome/fontawesome-svg-core/styles.css"],
 });
