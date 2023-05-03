@@ -19,17 +19,17 @@ watch(
 );
 
 //set overflow
-watch(
-  burger,
-  (value) => {
-    if (value) {
-      window.document.body.style.overflowY = "hidden";
-    } else {
-      window.document.body.style.overflowY = "auto";
-    }
-  },
-  { deep: true, immediate: true }
-);
+// watch(
+//   burger,
+//   (value) => {
+//     if (value) {
+//       window.document.body.style.overflowY = "hidden";
+//     } else {
+//       window.document.body.style.overflowY = "auto";
+//     }
+//   },
+//   { deep: true, immediate: true }
+// );
 </script>
 
 <template>
