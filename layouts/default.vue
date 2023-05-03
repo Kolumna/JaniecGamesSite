@@ -11,7 +11,7 @@ const signOut = () => {
   <main class="overflow-x-hidden">
     <header>
       <nav
-        class="container mx-auto pb-2 lg:mb-24 mt-12 lg:mt-0 mb-8 px-4 gap-12 flex justify-between flex-col"
+        class="container mx-auto pb-2 lg:mb-24 lg:mt-0 mb-4 px-8 lg:px-4 gap-8 lg:gap-12 flex justify-between flex-col"
       >
         <section class="flex justify-between">
           <section class="hidden lg:flex gap-4">
@@ -53,8 +53,8 @@ const signOut = () => {
             </section>
           </section>
         </section>
-        <section class="flex justify-between gap-8">
-          <div class="flex gap-4 w-64 lg:w-auto">
+        <section class="flex justify-between items-center gap-8">
+          <div class="flex gap-4 w-48 lg:w-auto">
             <NuxtLink class="" to="/">
               <img src="~assets/svg/logo.svg" />
             </NuxtLink>
@@ -69,9 +69,31 @@ const signOut = () => {
             <div
               class="w-[45px] h-full flex justify-center items-end flex-col gap-2 cursor-pointer"
             >
-              <div class="w-full h-[6px] bg-green-400"></div>
-              <div class="w-full h-[6px] bg-green-400"></div>
-              <div class="w-full h-[6px] bg-green-400"></div>
+              <svg
+                width="51"
+                height="51"
+                viewBox="0 0 51 51"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <mask
+                  id="mask0_6_20"
+                  style="mask-type: alpha"
+                  maskUnits="userSpaceOnUse"
+                  x="0"
+                  y="0"
+                  width="51"
+                  height="51"
+                >
+                  <rect width="50.9675" height="50.9675" fill="#D9D9D9" />
+                </mask>
+                <g mask="url(#mask0_6_20)">
+                  <path
+                    d="M10 37V33.1667H44V37H10ZM10 27.4167V23.5833H44V27.4167H10ZM10 17.8333V14H44V17.8333H10Z"
+                    fill="#4ade80"
+                  />
+                </g>
+              </svg>
             </div>
           </section>
           <section class="hidden lg:flex gap-12">
@@ -121,16 +143,16 @@ const signOut = () => {
 
     <footer class="bg-green-400 h-full">
       <section
-        class="h-full w-full flex justify-between container mx-auto p-4 pt-12"
+        class="h-full flex-col items-center lg:items-start lg:flex-row w-full flex justify-between container mx-auto p-4 pt-12"
       >
-        <div class="flex flex-col gap-24">
-          <img class="" src="~assets/svg/footerLogo.svg" />
-          <div class="font-bold">
+        <div class="flex flex-col gap-12">
+          <img class="lg:w-96" width="300" src="~assets/svg/footerLogo.svg" />
+          <div class="font-bold text-center lg:text-start">
             <span>&COPY;2023 JaniecGames</span>
           </div>
         </div>
-        <div class="flex items-start">
-          <img class="" src="~assets/svg/JLab.svg" />
+        <div class="flex items-start mt-8 lg:m-0 mb-8">
+          <img class="lg:w-64" width="200" src="~assets/svg/JLab.svg" />
         </div>
       </section>
     </footer>

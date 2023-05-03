@@ -21,7 +21,7 @@ getPostsData().then((res) => (post.value = res));
           </p>
           <div class="flex justify-end">
             <button
-              class="p-4 px-8 bg-zinc-900 text-green-400 font-bold"
+              class="p-4 px-8 w-full lg:w-auto bg-zinc-900 text-green-400 font-bold"
             >
               WKRÓTCE
             </button>
