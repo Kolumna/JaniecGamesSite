@@ -23,9 +23,9 @@ watch(
   burger,
   (value) => {
     if (value) {
-      document.body.style.overflowY = "hidden";
+      window.document.body.style.overflowY = "hidden";
     } else {
-      document.body.style.overflowY = "auto";
+      window.document.body.style.overflowY = "auto";
     }
   },
   { deep: true, immediate: true }
