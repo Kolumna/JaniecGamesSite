@@ -2,16 +2,78 @@
 const user = useUser();
 const username = useUserData();
 
+const burger = ref(false);
+
 const signOut = () => {
   signOutUser();
 };
+
+const menu = reactive({
+  isOpen: false,
+});
+
+const route = useRoute();
+
+watch(
+  route,
+  (value) => {
+    burger.value = false;
+  },
+  { deep: true, immediate: true }
+);
 </script>
 
 <template>
   <main class="overflow-x-hidden">
+    <div
+      :class="`absolute ${
+        !burger && 'translate-x-[100%]'
+      } transition-all duration-300 w-full h-screen bg-white z-50`"
+    >
+      <nav class="w-full flex lg:hidden justify-end p-4 pt-6">
+        <button @click="burger = false">
+          <svg
+            width="51"
+            height="51"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <mask
+              id="mask0_221_7"
+              style="mask-type: alpha"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="51"
+              height="51"
+            >
+              <rect width="51" height="51" fill="#D9D9D9" />
+            </mask>
+            <g mask="url(#mask0_221_7)">
+              <path
+                d="M6.4 19L5 17.6L10.6 12L5 6.4L6.4 5L12 10.6L17.6 5L19 6.4L13.4 12L19 17.6L17.6 19L12 13.4L6.4 19Z"
+                fill="#22c55e"
+              />
+            </g>
+          </svg>
+        </button>
+      </nav>
+      <section class="px-4">
+        <ul class="flex flex-col gap-8">
+          <li class="text-5xl font-bold"><NuxtLink to="/">Start</NuxtLink></li>
+          <li class="text-5xl font-bold">
+            <NuxtLink to="/games">Gry</NuxtLink>
+          </li>
+          <li class="text-5xl font-bold">
+            <NuxtLink to="/articles">Aktualności</NuxtLink>
+          </li>
+        </ul>
+      </section>
+    </div>
     <header>
       <nav
-        class="container mx-auto pb-2 lg:mb-24 lg:mt-0 mb-4 px-8 lg:px-4 gap-8 lg:gap-12 flex justify-between flex-col"
+        class="container mx-auto pb-2 lg:mb-24 lg:mt-0 mb-4 px-5 gap-6 lg:gap-12 flex justify-between flex-col"
       >
         <section class="flex justify-between">
           <section class="hidden lg:flex gap-4">
@@ -66,7 +128,8 @@ const signOut = () => {
             </section>
           </div>
           <section class="lg:hidden">
-            <div
+            <button
+              @click="burger = true"
               class="w-[45px] h-full flex justify-center items-end flex-col gap-2 cursor-pointer"
             >
               <svg
@@ -94,7 +157,7 @@ const signOut = () => {
                   />
                 </g>
               </svg>
-            </div>
+            </button>
           </section>
           <section class="hidden lg:flex gap-12">
             <!--<div v-if="user" class="flex justify-center items-end">
@@ -137,7 +200,7 @@ const signOut = () => {
       </nav>
     </header>
 
-    <section class="container mx-auto min-h-[750px] p-8 lg:p-4 mb-12">
+    <section class="container mx-auto min-h-[750px] p-5 lg:p-4 mb-12">
       <NuxtPage />
     </section>
 

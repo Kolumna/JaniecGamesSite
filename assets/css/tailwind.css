@@ -6,6 +6,11 @@
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Lato';
   src: url(/assets/fonts/Lato-Regular.ttf);
