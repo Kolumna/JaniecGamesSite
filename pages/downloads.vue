@@ -17,7 +17,7 @@ const user = useUser();
       <ul class="text-white text-xl">
         <li class="flex items-center gap-8 mb-4 w-96 justify-between">
           <span>
-            Szmeje Dungeons ModMenager
+            Szmeje Dungeons ModManager
           </span>
           <button
             class="bg-green-400 hover:bg-white transition-all duration-200 p-2 px-4 text-zinc-900 font-bold flex items-center gap-2"
